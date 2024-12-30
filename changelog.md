@@ -1,6 +1,18 @@
+# 1.4.0
+The next Major Update is here! Here's What's New:
+
+## BugFixes:
+- Fixed a bug where some of the quotes won't wrap correctly on the **AlertLayer**.
+- Fixed even more **Grammar issues** within quotes. (Yikes!)
+- Fixed the author names in quotes to actually be their GD username.
+
+## New Features:
+- Added **Contributor Badges**! A new way to show your contribution to the **Encouraging Quotes Mod**
+- Added the **Wisdom Points** to see how many quotes a user has contributed to the mod. By simply Clicking the **Badge** on their **Profile Page**
+
 # 1.3.2
 - Geode 4.0.0 (2.207) Support.
-- Added a few more quotes, all taken from the quote submission channel in [My Discord]((https://discord.gg/wThzkVxKuF)).
+- Added a few more quotes, all taken from the quote submission channel in [My Discord](https://discord.gg/wThzkVxKuF).
 - Fixed grammar on some quotes.
 
 # 1.3.1
@@ -17,8 +29,8 @@
 - Rewrote mod description.
 
 ## Bugfixes:
-- Fixed a bug where the Quote will appear in black text for some reason.
-- Fixed a bug where the Quote button sometimes won't appear on android if the setting is enabled.
+- Fixed a bug where the Quote appeared in black text.
+- Fixed a bug where the Quote button sometimes didn't appear on android if the setting was enabled.
 
 # 1.2.0 (formerly 1.1.1 - 1.1.2)
 - Fixed a bug where all of the quotes could appear at once.
