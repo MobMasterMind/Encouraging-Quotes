@@ -1,3 +1,16 @@
+# 1.4.1
+Minor Patch for new quotes and an important bugfix, Here's What's new:
+
+## Bugfixes:
+- Fixed a bug where The quote contributor badge Would stack with other badges and also duplicate upon refreshing the page.
+- Fixed the names of some missed users within the quotes.
+
+## Features:
+- As always, Added 12 New Quotes.
+- Updated Mod Description to be colorful and flashy.
+- Added support with badges API so that The badges get merged into 1 when(if) there are multiple.
+- Support for Geode 4.2.0
+
 # 1.4.0
 The next Major Update is here! Here's What's New:
 

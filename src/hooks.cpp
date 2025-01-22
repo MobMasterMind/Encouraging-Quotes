@@ -56,6 +56,10 @@ class $modify(MyPauseLayer, PauseLayer) {
 };
 
 class $modify(CustomProfilePage, ProfilePage) {
+    struct Fields {
+        bool m_hasBadge;
+    };
+
     void loadPageFromUserInfo(GJUserScore* score) {
         ProfilePage::loadPageFromUserInfo(score);
 
@@ -66,23 +70,27 @@ class $modify(CustomProfilePage, ProfilePage) {
             return;
         }
 
-        auto layer = m_mainLayer;
-        CCMenu* username_menu = static_cast<CCMenu*>(layer->getChildByIDRecursive("username-menu"));
+        if (m_fields->m_hasBadge) return;
 
-        if (isContributor(score->m_userName)) {
-            auto contributorBadge = CCSprite::create("quotecontributorbadge.png"_spr);
-            contributorBadge->setID("contributorbadge-badge");
+        auto usernameMenu = m_mainLayer->getChildByID("username-menu");
+        if (!usernameMenu) return;
 
-            auto badgeButton = CCMenuItemSpriteExtra::create(
-                contributorBadge,
-                this,
-                menu_selector(CustomProfilePage::onBadgeClicked)
-            );
-            badgeButton->setTag(0);
+        auto contributorBadge = CCSprite::create("quotecontributorbadge.png"_spr);
+        contributorBadge->setID("contributorbadge-badge");
 
-            username_menu->addChild(badgeButton, 10);
-            username_menu->updateLayout();
-        }
+        auto badgeButton = CCMenuItemSpriteExtra::create(
+            contributorBadge,
+            this,
+            menu_selector(CustomProfilePage::onBadgeClicked)
+        );
+        badgeButton->setTag(0);
+        badgeButton->setID("contributorbadge-badge"_spr);
+
+        usernameMenu->addChild(badgeButton);
+        usernameMenu->updateLayout();
+
+        m_fields->m_hasBadge = true;
+        
     }
 
     void onBadgeClicked(CCObject* sender) {
