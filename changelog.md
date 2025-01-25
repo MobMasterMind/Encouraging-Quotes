@@ -1,3 +1,7 @@
+# 1.4.2
+## BugFixes
+- Emergency Fix Funny Bug With Everyone having badge
+
 # 1.4.1
 Minor Patch for new quotes and an important bugfix, Here's What's new:
 
