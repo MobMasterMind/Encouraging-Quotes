@@ -52,9 +52,10 @@ int getUserContributionCount(const std::string &username) {
     return contributionCount;
 }
 
+std::vector<std::string> contributors;
+
 // --- Contributor Badges ---
 std::vector<std::string> getContributorsFromFiles() {
-    std::vector<std::string> contributors;
     std::vector<std::string> fileNames = {
         "quotes.txt", 
         "jokequotes.txt", 

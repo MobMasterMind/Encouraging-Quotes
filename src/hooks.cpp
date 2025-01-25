@@ -63,6 +63,9 @@ class $modify(CustomProfilePage, ProfilePage) {
     void loadPageFromUserInfo(GJUserScore* score) {
         ProfilePage::loadPageFromUserInfo(score);
 
+        auto usernameMenu = m_mainLayer->getChildByID("username-menu");
+        if (!usernameMenu) return;
+
         // Check if badges are enabled
         bool badgesEnabled = Mod::get()->getSettingValue<bool>("showcontributorbadges");
 
@@ -70,31 +73,22 @@ class $modify(CustomProfilePage, ProfilePage) {
             return;
         }
 
-        if (m_fields->m_hasBadge) return;
+        if (isContributor(score->m_userName)) {
+            if (m_fields->m_hasBadge) return;
 
-        auto usernameMenu = m_mainLayer->getChildByID("username-menu");
-        if (!usernameMenu) return;
+            auto badgeButton = CCMenuItemSpriteExtra::create(
+                CCSprite::create("quotecontributorbadge.png"_spr),
+                this, menu_selector(CustomProfilePage::onBadgeClicked)
+            );
 
-        auto contributorBadge = CCSprite::create("quotecontributorbadge.png"_spr);
-        contributorBadge->setID("contributorbadge-badge");
+            badgeButton->setID("contributorbadge-badge"_spr);
 
-        auto badgeButton = CCMenuItemSpriteExtra::create(
-            contributorBadge,
-            this,
-            menu_selector(CustomProfilePage::onBadgeClicked)
-        );
-        badgeButton->setTag(0);
-        badgeButton->setID("contributorbadge-badge"_spr);
-
-        usernameMenu->addChild(badgeButton);
-        usernameMenu->updateLayout();
-
-        m_fields->m_hasBadge = true;
-        
+            usernameMenu->addChild(badgeButton);
+            usernameMenu->updateLayout();
+        }
     }
 
     void onBadgeClicked(CCObject* sender) {
-        auto username = m_score->m_userName;
-        showContributorInfo(username);
+        showContributorInfo(m_score->m_userName);
     }
 };
