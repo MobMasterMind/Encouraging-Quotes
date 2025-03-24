@@ -77,7 +77,7 @@ class $modify(CustomProfilePage, ProfilePage) {
             if (m_fields->m_hasBadge) return;
 
             auto badgeButton = CCMenuItemSpriteExtra::create(
-                CCSprite::create("quotecontributorbadge.png"_spr),
+                CCSprite::create("Badge.png"_spr),
                 this, menu_selector(CustomProfilePage::onBadgeClicked)
             );
 

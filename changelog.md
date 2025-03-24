@@ -1,3 +1,12 @@
+# 1.4.3
+## New Quotes:
+- +3 Encouraging Quotes
+- +14 Discouraging Quotes
+- +2 Joke Quotes
+
+## Bugfixes:
+- Fixed a bug with the badge appearing with a missing texture due to a misnamed file.
+
 # 1.4.2
 ## BugFixes
 - Emergency Fix Funny Bug With Everyone having badge

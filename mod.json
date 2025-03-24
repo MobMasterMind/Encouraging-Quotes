@@ -1,5 +1,5 @@
 {
-	"geode": "4.2.0",
+	"geode": "4.3.1",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -8,7 +8,7 @@
 	},
 	"id": "mobmastermind.encouraging-quotes",
 	"name": "Encouraging Quotes",
-	"version": "v1.4.2",
+	"version": "v1.4.3",
 	"developer": "MobMasterMind",
 	"description": "Fixes Your Emotional Damage (or adds more).",
 	"dependencies": [
